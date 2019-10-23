@@ -67,6 +67,7 @@ p {
   height: auto;
   text-align: center;
   box-shadow: 5px 10px #103e94;
+  border-radius: 15px;
 }
 
 .navBar {
