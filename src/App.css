@@ -33,6 +33,7 @@
 
 h1 {
   font-size: 3rem;
+  padding: 0% 1% 0% 1%;
 }
 
 h2 {
@@ -58,24 +59,4 @@ p {
   width: 700px;
   height: 500px;
   padding-top: 3%;
-}
-
-.photoCard {
-  background: #d0cec8;
-  margin: 0 auto;
-  width: 750px;
-  height: auto;
-  text-align: center;
-  box-shadow: 5px 10px #103e94;
-  border-radius: 15px;
-}
-
-.navBar {
-  display: flex;
-  justify-content: space-evenly;
-  margin: 0 auto;
-  padding-top: 1%;
-  width: 750px;
-  font-size: 1.5rem;
-  text-decoration: none;
 }
