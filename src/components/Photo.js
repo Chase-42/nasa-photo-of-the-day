@@ -1,53 +1,51 @@
-import React, { useState, useEffect } from "react";
-import PhotoCard from "./PhotoCard"
-import NavBar from "./NavBar"
-import "../App.css";
-import axios from 'axios';
-
+import React from 'react';
+import useRequest from '../hooks/useRequest';
+import PhotoCard from './PhotoCard';
+import NavBar from './NavBar';
+import styled from 'styled-components';
 
 export default function Data() {
-  const [pic, setPic] = useState();
-  const [title, setTitle] = useState();
-  const [info, setInfo] = useState();
-  const [date, setDate] = useState();
-  const [media, setMediaType] = useState();
+  const { data, loading, error } = useRequest(
+    'https://api.nasa.gov/planetary/apod?api_key=ItoIIAhlkPHvGHHG649w5IuuVrhA5dsybtdN9hQh'
+  );
 
-
-  useEffect(() => {
-    axios
-      .get('https://api.nasa.gov/planetary/apod?api_key=ItoIIAhlkPHvGHHG649w5IuuVrhA5dsybtdN9hQh')
-      .then(res => {
-        const photo = res.data.url;
-        const headline = res.data.title;
-        const info = res.data.explanation;
-        const date = res.data.date;
-        const mediaType = res.data.media_type;
-        setPic(photo);
-        setTitle(headline);
-        setInfo(info)
-        setDate(date);
-        setMediaType(mediaType);
-      })
-
-      .catch(err => {
-        console.log('mistake', err);
-      });
-  }, [])
+  if (loading)
+    return (
+      <LoadingDiv>
+        <h1>Loading...</h1>
+      </LoadingDiv>
+    );
+  if (error.error)
+    return (
+      <LoadingDiv>
+        <h2>Oops! Something went wrong... {error.error.message}</h2>
+      </LoadingDiv>
+    );
 
   return (
-    <div className="App">
-      <NavBar
-        date={date}
-      />
+    <PhotoDiv>
+      <NavBar date={data.date} />
       <PhotoCard
-        key={pic}
-        id={pic}
-        url={pic}
-        title={title}
-        info={info}
-        photo={pic} />
-    </div>
-  )
-
-
+        key={data.url}
+        id={data.url}
+        url={data.url}
+        title={data.title}
+        info={data.explanation}
+        photo={data.url}
+      />
+    </PhotoDiv>
+  );
 }
+
+const PhotoDiv = styled.div`
+  color: white;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 48rem;
+  height: auto;
+`;
+
+const LoadingDiv = styled.div`
+  color: white;
+  margin-top: 15%;
+`;
