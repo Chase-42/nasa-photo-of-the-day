@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 export default function Data() {
   const { data, loading, error } = useRequest(
-    'https://api.nasa.gov/planetary/apod?api_key=ItoIIAhlkPHvGHHG649w5IuuVrhA5dsybtdN9hQh'
+    'https://api.nasa.gov/planetary/apod?api_key=63TvDOx8yHYctPzzK1X4abrDZ1Kb70Z62tzJw6xf'
   );
 
   if (loading)
