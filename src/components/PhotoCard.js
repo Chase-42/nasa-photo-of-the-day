@@ -13,9 +13,7 @@ export default function PhotoCard(props) {
 
 const PhotoCardDiv = styled.div`
   background: rgba(84, 84, 84, 0.5);
-  width: 95%;
-  margin: 0 1rem 2rem 1rem;
-  max-width: 50rem;
+  margin: 0 5% 5% 5%;
   height: auto;
   text-align: center;
   box-shadow: 5px 10px #103e94;

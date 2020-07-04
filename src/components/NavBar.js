@@ -30,4 +30,8 @@ const NavSection = styled.div`
   justify-content: space-evenly;
   text-decoration: none;
   margin: auto;
+  @media (max-width: 800px) {
+    display: block;
+    margin-top: 5%;
+  }
 `;
