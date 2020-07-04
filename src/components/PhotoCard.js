@@ -22,11 +22,17 @@ const PhotoCardDiv = styled.div`
     font-size: 3rem;
   }
   p {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   img {
     width: 90%;
-    height: auto;
+    height: 30rem;
+    @media (max-width: 800px) {
+      height: 25rem;
+    }
+    @media (max-width: 700px) {
+      height: 20rem;
+    }
     overflow: hidden;
     object-fit: cover;
   }
