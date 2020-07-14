@@ -3,15 +3,19 @@ import '../App.css';
 import logo from '../NASA_logo.svg';
 import styled from 'styled-components';
 
-export default function NavBar(props) {
-  console.log(props);
+export default function NavBar() {
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+
   return (
     <NavBarDiv>
       <NavSection>
         <img className='App-logo' src={logo} alt='nasaLogo' />
         <h1>Photo Of The Day</h1>
       </NavSection>
-      <h3>Today's Date: {props.date}</h3>
+      <h3>Today's Date: {`${day}-${month}-${year}`}</h3>
     </NavBarDiv>
   );
 }
