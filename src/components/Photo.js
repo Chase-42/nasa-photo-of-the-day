@@ -43,6 +43,7 @@ const PhotoDiv = styled.div`
   width: 100%;
   max-width: 48rem;
   height: auto;
+  padding-bottom: 1rem;
 `;
 
 const LoadingDiv = styled.div`
