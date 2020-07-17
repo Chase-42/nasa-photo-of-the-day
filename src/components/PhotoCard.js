@@ -27,12 +27,12 @@ const PhotoCardDiv = styled.div`
   }
   img {
     width: 90%;
-    height: 35rem;
+    height: 30rem;
     @media (max-width: 800px) {
-      height: 30rem;
+      height: 25rem;
     }
     @media (max-width: 700px) {
-      height: 25rem;
+      height: 20rem;
     }
     overflow: hidden;
     object-fit: cover;

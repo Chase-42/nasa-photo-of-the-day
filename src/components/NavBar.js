@@ -15,7 +15,7 @@ export default function NavBar() {
         <img className='App-logo' src={logo} alt='nasaLogo' />
         <h1>Photo Of The Day</h1>
       </NavSection>
-      <h3>Today's Date: {`${day}-${month}-${year}`}</h3>
+      <h3>Today's Date: {`${month}-${day}-${year}`}</h3>
     </NavBarDiv>
   );
 }
